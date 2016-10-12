@@ -11,4 +11,10 @@ class Restaurant
 
   end
 
+  def save
+    sql = "INSERT INTO restaurants (name, address, cuisine) VALUES ('#{@name}') ('#{@address}') ('#{@cuisine}')RETURNING *"
+    restaurant = SQLRunner.run (sql).first
+    @id = restaurant['id']
+  end
+
 end

@@ -9,5 +9,11 @@ def initialize(options)
 @restaurant_id = options['restaurant_id'].to_i
 end
 
+def save
+  sql = "INSERT INTO meals (name, restaurant_id ) VALUES ('#{@name}','#{restaurant_id}') RETURNING *;"
+  meal = SQLRunner.run (sql).first
+  @id = meal['id']
+end
+
 
 end
