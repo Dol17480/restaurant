@@ -1,11 +1,11 @@
-require_relative('./models/restaurant')
-require_relative('./models/meal')
+require_relative('models/meal')
+require_relative('models/restaurant')
 
 require( 'pry-byebug' )
 
 pakho = Restaurant.new( {'name' => "The Pak Ho", 'address' => "Banbury Road", 'cuisine' => 'cuisine'} )
 pakho.save()
-shamrock = Restaurant.new( {'name' => "The Shamrock", 'address' => "O'Connell Street", 'cuisine' => 'traditional'} )
+shamrock = Restaurant.new( {'name' => "The Shamrock", 'address' => "O''Connell Street", 'cuisine' => 'traditional'} )
 shamrock.save()
 
 meal1 = Meal.new( {'name' => "King Prawn Chow Mein", 'restaurant_id' => pakho.id })
